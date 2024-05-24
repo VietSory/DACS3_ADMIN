@@ -3,13 +3,8 @@ package com.example.dacs3_admin
 import android.net.Uri
 import android.os.Bundle
 import android.widget.Toast
-import androidx.activity.enableEdgeToEdge
-import androidx.activity.result.PickVisualMediaRequest
-import androidx.activity.result.contract.ActivityResultContract
 import androidx.activity.result.contract.ActivityResultContracts
 import androidx.appcompat.app.AppCompatActivity
-import androidx.core.view.ViewCompat
-import androidx.core.view.WindowInsetsCompat
 import com.example.dacs3_admin.databinding.ActivityAddItemBinding
 import com.example.dacs3_admin.model.AllMenu
 import com.google.firebase.auth.FirebaseAuth

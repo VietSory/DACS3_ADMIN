@@ -139,7 +139,7 @@
                 android:inputType="textMultiLine"
                 android:paddingLeft="20px"
                 android:paddingRight="20px"
-                android:text="Nếu bạn đang tìm kiếm những cách thực hành và phát triển tiếng Anh thú vị, hãy chắc chắn bạn tham khảo qua phần Học Tiếng Anh có sẵn trên trang web toàn cầu của chúng tôi."
+                android:hint="Nếu bạn đang tìm kiếm những cách thực hành và phát triển tiếng Anh thú vị, hãy chắc chắn bạn tham khảo qua phần Học Tiếng Anh có sẵn trên trang web toàn cầu của chúng tôi."
                 android:textSize="18sp"
                 app:layout_constraintEnd_toEndOf="@+id/textView17"
                 app:layout_constraintStart_toStartOf="@+id/textView17"

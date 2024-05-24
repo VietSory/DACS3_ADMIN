@@ -2,6 +2,7 @@ package com.example.dacs3_admin.adapter
 
 import android.content.Context
 import android.net.Uri
+import android.util.Log
 import android.view.LayoutInflater
 import android.view.ViewGroup
 import androidx.recyclerview.widget.RecyclerView
@@ -35,6 +36,7 @@ class menuItemAdapter(
                 val menuItem=menuList[position]
                 val uriString =menuItem.drinkImage
                 val uri= Uri.parse(uriString)
+                Log.d("menu",uri.toString())
                 drinkName.text=menuItem.drinkName
                 drinkPrice.text=menuItem.drinkPrice
                 Glide.with(context).load(uri).into(menuImage)

@@ -2,10 +2,7 @@ package com.example.dacs3_admin
 
 import android.content.Intent
 import android.os.Bundle
-import androidx.activity.enableEdgeToEdge
 import androidx.appcompat.app.AppCompatActivity
-import androidx.core.view.ViewCompat
-import androidx.core.view.WindowInsetsCompat
 import com.example.dacs3_admin.databinding.ActivityMainBinding
 
 class MainActivity : AppCompatActivity() {
@@ -16,7 +13,7 @@ class MainActivity : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         setContentView(binding.root)
         binding.addMenu.setOnClickListener{
-            val intent =  Intent(this,AddItemActivity::class.java)
+            val intent =  Intent(this, AddItemActivity::class.java)
             startActivity(intent)
         }
         binding.allMenuItem.setOnClickListener{
