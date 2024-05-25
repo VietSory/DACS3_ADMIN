@@ -12,10 +12,15 @@ import com.example.dacs3_admin.databinding.PendingOrderItemBinding
 
 class PendingAdapter(private val context: Context,
                      private val customerNames:MutableList<String>,
-                     private val quantities: MutableList<String>,
-                     private val images: MutableList<String>
+                     private val prices: MutableList<String>,
+                     private val images: MutableList<String>,
+                     private val itemClicked:OnItemClicked
 ) : RecyclerView.Adapter<PendingAdapter.PendingViewHolder>() {
-
+    interface OnItemClicked{
+        fun onItemClickListener(position: Int)
+        fun onItemAcceptClickListener(position: Int)
+        fun onItemDispatchClickListenr(position: Int)
+    }
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): PendingViewHolder {
         val binding=PendingOrderItemBinding.inflate(LayoutInflater.from(parent.context),parent,false)
         return PendingViewHolder(binding)
@@ -31,22 +36,28 @@ class PendingAdapter(private val context: Context,
         fun bind(position: Int) {
             binding.apply{
                 nameCustomer.text=customerNames[position]
-                ItemQuantity.text=quantities[position]
+                ItemPrices.text=prices[position]
+
                 val uri= Uri.parse(images[position])
                 Glide.with(context).load(uri).into(pendingImage)
                 btnAccept.apply {
                     setOnClickListener {
                         if (!isAccepted){
-                            text="Từ Chối"
+                            text="Vận chuyển"
                             isAccepted=true
                             showtoast("Đơn Hàng Đã được chấp nhận")
+                            itemClicked.onItemAcceptClickListener(position)
                         }
                         else {
                             customerNames.removeAt(adapterPosition)
                             notifyItemRemoved(adapterPosition)
-                            showtoast("Đơn hàng đã bị từ chối")
+                            showtoast("Đơn hàng đã được vận chuyển đi")
+                            itemClicked.onItemDispatchClickListenr(position)
                         }
                     }
+                }
+                itemView.setOnClickListener {
+                    itemClicked.onItemClickListener(position)
                 }
             }
         }

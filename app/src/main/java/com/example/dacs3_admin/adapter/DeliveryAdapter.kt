@@ -9,7 +9,7 @@ import androidx.recyclerview.widget.RecyclerView
 import com.example.dacs3_admin.databinding.DeliveryItemBinding
 import com.example.dacs3_admin.databinding.DrinkItemBinding
 
-class DeliveryAdapter(private val customerNames:ArrayList<String>, private val statusMoneys:ArrayList<String>) : RecyclerView.Adapter<DeliveryAdapter.DeliveryViewHolder>() {
+class DeliveryAdapter(private val customerNames:MutableList<String>, private val statusMoneys:MutableList<Boolean>) : RecyclerView.Adapter<DeliveryAdapter.DeliveryViewHolder>() {
 
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): DeliveryViewHolder {
         val binding=DeliveryItemBinding.inflate(LayoutInflater.from(parent.context),parent,false)
@@ -25,8 +25,12 @@ class DeliveryAdapter(private val customerNames:ArrayList<String>, private val s
         fun bind(position: Int) {
             binding.apply{
                 customerName.text=customerNames[position]
-                statusMoney.text=statusMoneys[position]
-                val colorMap: Map<String, Int> = mapOf("received" to Color.Green.toArgb(),"notReceived" to Color.Red.toArgb(),"Pending" to Color.Gray.toArgb())
+                if(statusMoneys[position]==true){
+                    statusMoney.text="Đã Nhận"
+                } else {
+                    statusMoney.text="Chưa Nhận"
+                }
+                val colorMap = mapOf(true to Color.Green.toArgb(),false to Color.Red.toArgb())
                 statusMoney.setTextColor(colorMap[statusMoneys[position]]?:Color.Black.toArgb())
                 statusColor.backgroundTintList = ColorStateList.valueOf(colorMap[statusMoneys[position]]?:Color.Black.toArgb())
             }

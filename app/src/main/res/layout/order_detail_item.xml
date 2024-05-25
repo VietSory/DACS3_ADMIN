@@ -1,11 +1,9 @@
 <?xml version="1.0" encoding="utf-8"?>
 <androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:app="http://schemas.android.com/apk/res-auto"
-    xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="wrap_content"
-    android:background="@color/white">
-
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
     <androidx.cardview.widget.CardView
         android:id="@+id/cardView2"
         android:layout_width="360dp"
@@ -25,7 +23,7 @@
             android:layout_height="wrap_content">
 
             <ImageView
-                android:id="@+id/pendingImage"
+                android:id="@+id/drinkImage"
                 android:layout_width="73dp"
                 android:layout_height="68dp"
                 android:layout_marginStart="15dp"
@@ -37,54 +35,55 @@
                 tools:srcCompat="@tools:sample/avatars" />
 
             <TextView
-                android:id="@+id/nameCustomer"
-                android:layout_width="125dp"
-                android:layout_height="26dp"
+                android:id="@+id/drinkName"
+                android:layout_width="127dp"
+                android:layout_height="0dp"
                 android:layout_marginStart="16dp"
                 android:layout_marginTop="4dp"
                 android:layout_marginBottom="15dp"
                 android:text="TextView"
                 app:layout_constraintBottom_toTopOf="@+id/Quantity"
-                app:layout_constraintStart_toEndOf="@+id/pendingImage"
-                app:layout_constraintTop_toTopOf="@+id/pendingImage"
+                app:layout_constraintStart_toEndOf="@+id/drinkImage"
+                app:layout_constraintTop_toTopOf="@+id/drinkImage"
                 app:layout_constraintVertical_bias="1.0" />
 
             <TextView
                 android:id="@+id/Quantity"
-                android:layout_width="83dp"
-                android:layout_height="25dp"
+                android:layout_width="61dp"
+                android:layout_height="24dp"
                 android:layout_marginStart="16dp"
                 android:layout_marginBottom="4dp"
-                android:text="Tổng Tiền"
+                android:text="Số Lượng"
                 app:layout_constraintBottom_toBottomOf="parent"
-                app:layout_constraintStart_toEndOf="@+id/pendingImage" />
+                app:layout_constraintStart_toEndOf="@+id/drinkImage" />
 
             <TextView
-                android:id="@+id/ItemPrices"
+                android:id="@+id/ItemQuantity"
                 android:layout_width="10dp"
                 android:layout_height="27dp"
-                android:layout_marginStart="5dp"
+                android:layout_marginStart="4dp"
                 android:layout_marginBottom="4dp"
                 android:text="1"
+                android:textStyle="bold"
                 android:textColor="@color/textColor"
                 android:textSize="18sp"
-                android:textStyle="bold"
                 app:layout_constraintBottom_toBottomOf="parent"
                 app:layout_constraintStart_toEndOf="@+id/Quantity" />
 
-            <androidx.appcompat.widget.AppCompatButton
-                android:id="@+id/btnAccept"
-                android:layout_width="85dp"
-                android:layout_height="28dp"
+            <TextView
+                android:id="@+id/drinkPrice"
+                android:layout_width="105dp"
+                android:layout_height="29dp"
                 android:layout_marginTop="24dp"
-                android:layout_marginEnd="25dp"
-                android:background="@drawable/greenbuttonshape"
-                android:text="Đồng Ý"
-                android:textColor="#FFFFFF"
-                android:textSize="16sp"
+                android:layout_marginEnd="20dp"
+                android:text="100.000"
+                android:textAllCaps="false"
+                android:textColor="@color/textColor"
+                android:textSize="26sp"
+                android:textStyle="bold"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintHorizontal_bias="0.809"
-                app:layout_constraintStart_toEndOf="@+id/nameCustomer"
+                app:layout_constraintStart_toEndOf="@+id/drinkName"
                 app:layout_constraintTop_toTopOf="parent" />
 
         </androidx.constraintlayout.widget.ConstraintLayout>
